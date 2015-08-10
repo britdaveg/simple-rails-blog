@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to @post
+    else
+      redirect_to root_url
     end
   end
 
