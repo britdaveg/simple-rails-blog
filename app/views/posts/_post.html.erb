@@ -1,7 +1,7 @@
 <div class="actions">
   <%= link_to 'Delete', "/posts/#{post.id}", method: :delete, class: 'btn btn-default btn-xs', data: { confirm: 'Are you sure you want to delete this post?' } %>
   <%= link_to 'Read', post, { class: 'btn btn-default btn-xs' } %>
-  <%= link_to 'Comment', "/posts/#{post.id}", method: :post, class: 'btn btn-default btn-xs' %>
+  <%= link_to 'Comment', "/comments/#{post.id}", method: :post, class: 'btn btn-default btn-xs' %>
 </div>
 <div class="form-group">
    <%= text_area_tag :content, post.content, { class: 'form-control', readonly: true } %>
