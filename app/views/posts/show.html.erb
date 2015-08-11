@@ -2,6 +2,10 @@
   <div class="panel-heading"><h3 class="panel-title">Post #<%= @post.id %></h3></div>
   <div class="panel-body">
 
+    <div class="actions">
+      <%= link_to 'Comment', "/comments/new?post=#{@post.id}", class: 'btn btn-default btn-xs' %>
+    </div>
+
     <%= render partial: "form", locals: {readonly: true} %>
 
   </div>
