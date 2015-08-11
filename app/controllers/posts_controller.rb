@@ -17,10 +17,9 @@ class PostsController < ApplicationController
       comment.title = "First comment for this post"
       comment.comment = "Something very interesting"
       comment.save
-      redirect_to @post
-    else
-      redirect_to root_url
     end
+
+    redirect_to root_url
   end
 
   def destroy
@@ -29,10 +28,12 @@ class PostsController < ApplicationController
   end
 
   protected
-    def set_post
-      @post = Post.find(params[:id])
-    end
-    def post_params
-      params.require(:post).permit(:content)
-    end
+
+  def set_post
+    @post = Post.find( params[:id] )
+  end
+
+  def post_params
+    params.require(:post).permit(:content)
+  end
 end
