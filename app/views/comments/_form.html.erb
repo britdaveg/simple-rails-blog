@@ -12,10 +12,11 @@
           <%= f.text_area :comment, { class: 'form-control', readonly: readonly } %>
         </div>
 
+        <%= f.hidden_field :post, :value => @post.id %>
+
         <div class="actions">
           <button class="btn btn-primary btn-xs" name="commit" type="submit">OK</button>
           <%= link_to 'Cancel', "/posts/#{@post.id}", { :class=>"form-back btn btn-default btn-xs" } %>
-
         </div>
 
   <% end %>

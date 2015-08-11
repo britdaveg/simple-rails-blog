@@ -10,15 +10,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-
-    if @post.save
-      # placeholder to create a comment...
-      comment = @post.comments.create
-      comment.title = "First comment for this post"
-      comment.comment = "Something very interesting"
-      comment.save
-    end
-
+    @post.save
     redirect_to root_url
   end
 

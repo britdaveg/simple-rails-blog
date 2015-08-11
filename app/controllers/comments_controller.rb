@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:destroy]
 
   #def index
   #end
@@ -11,7 +11,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    redirect_to request.referrer || root_url
+    @post = Post.find( params[:comment][:post] )
+    comment = @post.comments.create
+    comment.title = params[:comment][:title]
+    comment.comment = params[:comment][:comment]
+    comment.save
+    redirect_to '/posts/#{params[:comment][:post]}'
   end
 
   def destroy
@@ -23,10 +28,6 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = Comment.find( params[:id] )
-  end
-
-  def comment_params
-    params.require(:comment).permit(:title, :content)
   end
 
 end
