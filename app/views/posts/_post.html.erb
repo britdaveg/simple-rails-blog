@@ -1,4 +1,6 @@
-<li class="collection-item avatar">
-  <%= link_to "Read post", post %>
-  <p><%= post.content %></p>
-</li>
+<div class="form-group">
+   <%= link_to 'Read', post, { class: 'btn btn-default pull-right' } %>
+   <%= link_to 'Delete', post, { class: 'btn btn-default pull-right' } %>
+
+   <%= text_field_tag :content, post.content, class: 'form-control' %>
+</div>

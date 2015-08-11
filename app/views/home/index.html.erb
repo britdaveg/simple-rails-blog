@@ -1,7 +1,10 @@
 <div class="row">
   <%= form_for(@post) do |f| %>
     <div class="input-field col s12">
-      <%= f.text_area :content, placeholder: "Submit a blog post...", id: "post", type: "text", class: "materialize-textarea" %>
+      <div class="form-group">
+        <%= f.text_area :content, placeholder: "Submit a blog post...", class: 'form-control', readonly: false %>
+      </div>
+
     </div>
 
     <button class="btn btn-default pull-right" type="submit">Post</button>
@@ -11,8 +14,8 @@
 
 <div class="row">
   <div class="col s12">
-    <ul class="collection">
+    <div class="form">
       <%= render @posts %>
-    </ul>
+    </div>
   </div>
 </div>
