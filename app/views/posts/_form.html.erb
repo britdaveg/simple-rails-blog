@@ -8,9 +8,10 @@
         </div>
 
         <% if @post.comments %>
+           <%= f.label :comments %>
            <% @post.comments.each do |c| %>
               <div class="form-group">
-                 <%= text_field_tag :title, c.title, { class: 'form-control' } %>
+                 <%= text_area_tag :title, c.title, { class: 'form-control', readonly: readonly } %>
               </div>
            <% end %>
         <% end %>
