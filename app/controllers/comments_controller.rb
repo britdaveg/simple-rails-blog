@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     comment.title = params[:comment][:title]
     comment.comment = params[:comment][:comment]
     comment.save
-    redirect_to '/posts/#{params[:comment][:post]}'
+    redirect_to root_url
   end
 
   def destroy
