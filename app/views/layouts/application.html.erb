@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsBlog</title>
+  <title>Basic Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,6 +12,10 @@
 
 <div class="container-fluid">
   <h4>Basic Blog</h4>
+
+  <% if user_signed_in? %>
+      <%= link_to( 'Logout', destroy_user_session_path, :method => :delete, :class=>"form-back btn btn-default btn-xs pull-right" ) %>
+  <% end %>
 
   <div class="row">
     <div class="col-md-8">
