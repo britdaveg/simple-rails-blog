@@ -1,6 +1,9 @@
 <div class="form-group">
-   <%= link_to 'Read', post, { class: 'btn btn-default pull-right' } %>
-   <%= link_to 'Delete', post, { class: 'btn btn-default pull-right' } %>
+   <%= link_to 'Read', post, { class: 'btn btn-default btn-sm pull-right' } %>
+   <%= link_to 'Delete', post, { class: 'btn btn-default btn-sm pull-right' } %>
 
    <%= text_field_tag :content, post.content, class: 'form-control' %>
+   <% post.comments.each do |c| %>
+      <%= text_field_tag :title, c.title, class: 'form-control' %>
+   <% end %>
 </div>

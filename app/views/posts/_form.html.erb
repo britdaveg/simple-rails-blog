@@ -7,6 +7,14 @@
           <%= f.text_area :content, { class: 'form-control', readonly: readonly } %>
         </div>
 
+        <% if @post.comments %>
+           <% @post.comments.each do |c| %>
+              <div class="form-group">
+                 <%= text_field_tag :title, c.title, { class: 'form-control' } %>
+              </div>
+           <% end %>
+        <% end %>
+
   <% end %>
   </div>
 </div>
